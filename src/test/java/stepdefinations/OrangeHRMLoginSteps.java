@@ -9,6 +9,7 @@ import pages.LoginPage;
 
 public class OrangeHRMLoginSteps extends BaseTest {
 
+
     LoginPage loginPage;
     ReusableFunctions rf;
 
@@ -84,4 +85,12 @@ public class OrangeHRMLoginSteps extends BaseTest {
 
         Assert.assertTrue(loginPage.isLoginButtonDisplayed());
     }
+
+
+	@Given("To Launch the browser and navigate the url")
+    public void to_launch_the_browser_and_navigate_the_url() {
+   
+    }
+	
 }
+
