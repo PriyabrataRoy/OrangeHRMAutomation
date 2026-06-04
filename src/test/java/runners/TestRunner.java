@@ -4,7 +4,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/resources/feature/06_Logoutfeature.feature",
+
+        features = "src/test/resources/feature",
+
         glue = "stepdefinations",
         plugin = {
                 "pretty",

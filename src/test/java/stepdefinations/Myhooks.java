@@ -1,5 +1,7 @@
 package stepdefinations;
 
+import java.time.Duration;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import base.BaseTest;
@@ -16,7 +18,9 @@ public class Myhooks {
         BaseTest.driver.manage().window().maximize();
 
         BaseTest.driver.get(
-        		"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        		"https://opensource-demo.orangehrmlive.com");
+        
+        BaseTest.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     }
 
     @After
