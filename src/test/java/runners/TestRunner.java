@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/resources/feature",
+        features = "src/test/resources/feature/04_PIMfeature.feature",
         glue = "stepdefinations",
         plugin = {
                 "pretty",

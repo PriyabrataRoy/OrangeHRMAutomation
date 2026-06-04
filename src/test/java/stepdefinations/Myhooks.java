@@ -16,7 +16,7 @@ public class Myhooks {
         BaseTest.driver.manage().window().maximize();
 
         BaseTest.driver.get(
-                "https://opensource-demo.orangehrmlive.com/");
+        		"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
     @After
