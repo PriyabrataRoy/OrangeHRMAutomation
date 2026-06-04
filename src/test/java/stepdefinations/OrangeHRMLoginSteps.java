@@ -30,6 +30,7 @@ public class OrangeHRMLoginSteps extends BaseTest {
 
         loginPage.enterUsername(rf.getCellData(4, 0));
         loginPage.enterPassword(rf.getCellData(4, 1));
+        rf.TakeScreenshot("Valid_Credentials_Entered");
     }
 
     @When("User enters invalid username and valid password")
@@ -37,6 +38,8 @@ public class OrangeHRMLoginSteps extends BaseTest {
 
         loginPage.enterUsername(rf.getCellData(1, 0));
         loginPage.enterPassword(rf.getCellData(1, 1));
+        
+        rf.TakeScreenshot("InValid_UserName_Entered");
     }
 
     @When("User enters valid username and invalid password")
@@ -44,6 +47,8 @@ public class OrangeHRMLoginSteps extends BaseTest {
 
         loginPage.enterUsername(rf.getCellData(2, 0));
         loginPage.enterPassword(rf.getCellData(2, 1));
+        
+        rf.TakeScreenshot("InValid_password_Entered");
     }
 
     @When("User clicks Login button")
@@ -55,14 +60,18 @@ public class OrangeHRMLoginSteps extends BaseTest {
     @Then("User should be navigated to dashboard")
     public void verifyDashboard() throws InterruptedException {
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
+        rf.TakeScreenshot("Dashboard_Page_Verified");
 
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("dashboard"));
     }
+    
     @Then("User should see invalid credential error")
-    public void verifyInvalidMessage() {
-
+    public void verifyInvalidMessage() throws InterruptedException {
+    	Thread.sleep(2500);
+    	rf.TakeScreenshot("Invalid_Credentials_Error_Screen");
+    	
         Assert.assertTrue(
                 loginPage.getInvalidMessage().contains("Invalid"),
                 "Invalid credential message not displayed");
@@ -70,7 +79,9 @@ public class OrangeHRMLoginSteps extends BaseTest {
 
     @Then("User should see required field validation")
     public void verifyRequiredMessage() {
-
+    	
+    	rf.TakeScreenshot("Required_Field_Validation_Screen");
+    	
         Assert.assertEquals(
                 loginPage.getRequiredMessage(),
                 "Required");
@@ -84,6 +95,8 @@ public class OrangeHRMLoginSteps extends BaseTest {
         Assert.assertTrue(loginPage.isPasswordDisplayed());
 
         Assert.assertTrue(loginPage.isLoginButtonDisplayed());
+        
+        rf.TakeScreenshot("Login_UI_Elements_Checked");
     }
 
 
