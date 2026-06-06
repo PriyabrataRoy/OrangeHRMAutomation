@@ -32,7 +32,7 @@ public class ForgotPasswordPage {
   }
 
   
-  @FindBy(xpath = "//button[text()=' Reset Password ']")
+  @FindBy(xpath = "//button[@type='submit']")
   WebElement btnResetPassword;
   public void clickResetPassword() {
       rf.clickElement(btnResetPassword);
@@ -44,5 +44,14 @@ public class ForgotPasswordPage {
   public String getSuccessMessage() {
       rf.waitTime(msgSuccessTitle);
       return msgSuccessTitle.getText();
+  }
+  
+
+
+ 
+
+  public boolean isResetUsernameFieldDisplayed() {
+      rf.waitTime(txtResetUsername);
+      return txtResetUsername.isDisplayed();
   }
 }

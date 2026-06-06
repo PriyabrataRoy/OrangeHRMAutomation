@@ -16,7 +16,10 @@ public class Myhooks {
         BaseTest.driver = new ChromeDriver();
 
         BaseTest.driver.manage().window().maximize();
-
+        
+        BaseTest.driver.manage().timeouts()
+        .pageLoadTimeout(Duration.ofSeconds(60));
+        
         BaseTest.driver.get(
         		"https://opensource-demo.orangehrmlive.com");
         

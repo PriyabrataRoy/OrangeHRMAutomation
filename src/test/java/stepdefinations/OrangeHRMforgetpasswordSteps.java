@@ -30,13 +30,15 @@ public class OrangeHRMforgetpasswordSteps extends BaseTest {
 
     @Then("User should be navigated to Reset Password page")
     public void verifyNavigation() throws InterruptedException {
-        Thread.sleep(2000); 
+
+        Thread.sleep(2000);
+
         initRF();
-        
+
         rf.TakeScreenshot("Reset_Password_Page_Opened");
-        
+
         Assert.assertTrue(
-                driver.getCurrentUrl().contains("requestPasswordResetCode"),
+                forgotPwdPage.isResetUsernameFieldDisplayed(),
                 "Reset Password page Not opened!");
     }
 
